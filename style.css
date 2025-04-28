@@ -1,3 +1,4 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,91 +6,102 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(to right, #d9e4f5, #f5f8fd);
   color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header */
 header {
-  background: #0056D2;
-  color: white;
   padding: 20px 0;
   text-align: center;
 }
 
 header h1 {
+  font-size: 2.5rem;
+  color: #2451B7;
   margin-bottom: 10px;
 }
 
-nav ul {
-  list-style: none;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
+nav a {
+  margin: 0 10px;
   text-decoration: none;
+  color: #2451B7;
   font-weight: bold;
+  font-size: 1rem;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  background: #e6f0ff;
-  margin-bottom: 30px;
+nav a:hover {
+  color: #0d1a66;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
+/* Main content */
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
-.btn-primary {
-  padding: 10px 20px;
-  background: #0056D2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin: 20px 0;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: #003c91;
-}
-
-/* Blog Section */
-.blog .post {
-  background: white;
-  padding: 20px;
+/* Post styles */
+.post {
+  background-color: white;
   margin-bottom: 20px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.ad-slot {
-  background: #f1f1f1;
-  padding: 15px;
-  text-align: center;
-  margin: 20px 0;
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.post h3 a {
+  text-decoration: none;
+  color: #2451B7;
+}
+
+.post h3 a:hover {
+  color: #0d1a66;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Load More button */
+#loadMoreBtn {
+  display: inline-block;
+  margin: 30px 0;
+  padding: 12px 25px;
+  background-color: #2451B7;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+  background-color: #0d1a66;
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: white;
-  text-align: center;
+  margin-top: auto;
   padding: 20px 0;
-  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
 }
