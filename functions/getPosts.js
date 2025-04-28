@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
   try {
-    // Fetch evergreen advice
+    // Fetch evergreen advice from your site
     const adviceRes = await fetch('https://smartmoneyhub.netlify.app/advice.json');
     const adviceData = await adviceRes.json();
 
@@ -12,7 +12,7 @@ exports.handler = async function(event, context) {
 
     // Filter news to only include articles with a valid URL
     const newsPosts = newsData.articles
-      .filter(article => article.url) // Only include if a URL exists
+      .filter(article => article.url)
       .map(article => ({
         title: article.title,
         url: article.url,
