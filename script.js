@@ -6,21 +6,16 @@ const postsPerLoad = 5;
 
 // Fetch posts from serverless function
 async function fetchPosts() {
-  try {
-    const res = await fetch('/.netlify/functions/getPosts');
-    const data = await res.json();
-    return data.posts || [];
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    return [];
-  }
+  const res = await fetch('/.netlify/functions/getPosts');
+  const data = await res.json();
+  return data.posts;
 }
 
 // Create post element HTML
 function createPostElement(post) {
   return `
     <div class="post">
-      <h3><a href="${post.url}" target="_blank" rel="noopener noreferrer">${post.title}</a></h3>
+      <h3><a href="${post.url}" target="_blank">${post.title}</a></h3>
       <p>${post.excerpt}</p>
     </div>
   `;
@@ -59,7 +54,6 @@ async function loadPosts() {
   }
 }
 
-// Event listener for load more button
 loadMoreBtn.addEventListener('click', loadPosts);
 
 // Initial load
