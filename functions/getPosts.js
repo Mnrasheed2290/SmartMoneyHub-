@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-exports.handler = async function(event, context) {
+export async function handler(event, context) {
   const urls = [
     "https://www.reddit.com/r/sidehustle/top.json?limit=5",
     "https://www.reddit.com/r/financialindependence/top.json?limit=5",
@@ -26,4 +26,4 @@ exports.handler = async function(event, context) {
     statusCode: 200,
     body: JSON.stringify({ posts }),
   };
-};
+}
