@@ -5,7 +5,7 @@ let postsLoaded = 0;
 const postsPerLoad = 5;
 
 async function fetchPosts() {
-  const res = await fetch('/.netlify/functions/getPosts');
+  const res = await fetch('/.netlify/functions/getPosts'); // <-- THIS IS THE FIX
   const data = await res.json();
   return data.posts;
 }
