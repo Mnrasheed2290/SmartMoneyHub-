@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 export async function handler(event, context) {
   const urls = [
     "https://www.reddit.com/r/sidehustle/top.json?limit=5",
@@ -11,7 +9,7 @@ export async function handler(event, context) {
   let posts = [];
 
   for (const url of urls) {
-    const res = await fetch(url);
+    const res = await fetch(url); // <-- Now using built-in fetch, no import needed
     const json = await res.json();
     const newPosts = json.data.children.map(child => ({
       title: child.data.title,
