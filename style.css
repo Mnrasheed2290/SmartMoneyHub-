@@ -149,3 +149,47 @@ footer {
   width: 100%;
   border-top: 1px solid #ddd;
 }
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding: 40px 20px 30px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .post h3 {
+    font-size: 1.25rem;
+  }
+
+  .post p {
+    font-size: 0.95rem;
+  }
+
+  #loadMoreBtn {
+    font-size: 0.95rem;
+    padding: 10px 24px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 20px 0;
+  }
+}
